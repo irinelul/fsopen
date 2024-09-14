@@ -25,8 +25,8 @@ sequenceDiagram
     deactivate server
     Note right of browser: The browser executes the callback function that renders the notes
 
-    browser->server: User creates a new note and clicks submit. The submit button triggers an on event status  
+    browser->>server: User creates a new note and clicks submit. <br/>The submit button triggers an on event status  
     activate server
-    server --> server: Parses the request and saves it to notes.json. 
-    server --> browser: Server parses the POST request browser made through JS and returns code 201 created
+    server -->>server: Parses the request and saves it to notes.json. 
+    server -->> browser: Server parses the POST request browser made through JS and returns code 201 created. <br/>Refresh is not needed since JS reloads the notes
     deactivate server
